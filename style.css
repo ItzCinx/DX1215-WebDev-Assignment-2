@@ -62,7 +62,6 @@ header
 
 #panda 
 {
-    position: absolute;
     overflow:visible;
     top: 30%;
     left: 0%;
@@ -569,6 +568,11 @@ footer
     {
         border-radius: 0;
         border: 5px rgb(8, 56, 58) solid;
+    }
+
+    #panda
+    {
+        overflow:visible;
     }
 
     /*make a menu items vertical*/
