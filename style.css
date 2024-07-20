@@ -488,7 +488,8 @@ footer
 }
 
 .footer-logo img {
-    max-width: 100px; /* Adjust logo size as needed */
+    max-width: 100px;
+    border-radius: 50%;
 }
 
 .footer-info,
