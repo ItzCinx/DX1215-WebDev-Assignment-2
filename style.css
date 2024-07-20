@@ -57,9 +57,19 @@ header
     pointer-events: none;
     opacity: 0;
     transition: opacity 1s ease, transform 1s ease;
-    transform: translateY(50px);
+    transform: translateY(50px); /* Adjust initial offset as needed */
 }
 
+#panda 
+{
+    position: absolute;
+    overflow:visible;
+    top: 30%;
+    left: 0%;
+
+    width: 80vw;
+    height: 80vh;
+}
 
 #plant
 {
