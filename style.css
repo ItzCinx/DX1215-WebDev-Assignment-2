@@ -60,15 +60,16 @@ header
     transform: translateY(50px); /* Adjust initial offset as needed */
 }
 
-#panda 
-{
-    overflow:visible;
+#panda {
+    position: absolute;
+    overflow: visible;
     top: 30%;
     left: 0%;
-
     width: 80vw;
     height: 80vh;
+    transition: all 0.5s ease;
 }
+
 
 #plant
 {
@@ -568,11 +569,6 @@ footer
     {
         border-radius: 0;
         border: 5px rgb(8, 56, 58) solid;
-    }
-
-    #panda
-    {
-        overflow:visible;
     }
 
     /*make a menu items vertical*/
