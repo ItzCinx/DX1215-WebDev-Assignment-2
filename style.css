@@ -57,7 +57,7 @@ header
     pointer-events: none;
     opacity: 0;
     transition: opacity 1s ease, transform 1s ease;
-    transform: translateY(50px); /* Adjust initial offset as needed */
+    transform: translateY(50px);
 }
 
 
