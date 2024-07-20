@@ -177,7 +177,7 @@ nav ul li a:hover, nav ul li a.active
 #page1 h2
 {
     font-size: 3em;
-    color: #fff;
+    color: #d8fee4;
     margin-bottom: 10px;
 }
 
@@ -196,6 +196,7 @@ nav ul li a:hover, nav ul li a.active
 
     border-radius: 8px;
 
+    font-weight: 500;
 }
 
 /* about */
@@ -222,6 +223,8 @@ nav ul li a:hover, nav ul li a.active
 {
     min-width: 55vh;
     flex: 1;
+    color: rgb(144, 198, 144);
+
 
     background-color: #0c6860;
     padding: 20px;
@@ -233,6 +236,7 @@ nav ul li a:hover, nav ul li a.active
 .flex-container 
 {
     background-color: #06534d;
+    color: rgb(206, 240, 206);
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -246,6 +250,12 @@ nav ul li a:hover, nav ul li a.active
 {
     display: flex;
     flex-direction: column;
+}
+
+.flex-container > div > h3
+{
+    color: rgb(22, 189, 111);
+    font-size: 25px;
 }
 
 .flex-container img
@@ -272,6 +282,8 @@ nav ul li a:hover, nav ul li a.active
     padding: 2vh 1vh;
     border-top: 3px solid rgb(2, 43, 41);
     border-bottom: 3px solid rgb(2, 43, 41);
+    color: rgb(6, 58, 34);
+
 }
 
 .fun-facts ul 
@@ -282,6 +294,8 @@ nav ul li a:hover, nav ul li a.active
 .fun-facts ul li
 {
     margin-bottom: 1.5vh;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 /* Image Gallery */
@@ -299,7 +313,7 @@ nav ul li a:hover, nav ul li a.active
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 100vw; /* Fill 100% of viewport width */
+    width: 100vw;
     margin-left: calc((100% - 100vw) / 2); /* Center horizontally */
     margin-right: calc((100% - 100vw) / 2); /* Center horizontally */
 }
@@ -359,12 +373,10 @@ nav ul li a:hover, nav ul li a.active
     align-items: center;
 }
 
-.video-section video 
+.video-section iframe 
 {
     width: 80%;
     max-width: 60vh;
-    border: 2px solid red;
-    border-radius: 1vh;
 }
 
 /* Page 2*/
@@ -376,6 +388,7 @@ nav ul li a:hover, nav ul li a.active
 
 .grid-container {
     display: grid;
+    
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     gap: 20px;
@@ -383,6 +396,8 @@ nav ul li a:hover, nav ul li a.active
     background-color: #42b4ab;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    line-height: 35px;
+    font-weight: 500;
 }
 
 /* Individual grid item styles */
@@ -396,16 +411,16 @@ nav ul li a:hover, nav ul li a.active
 
 /* Heading styles */
 #page2 h2,#page2 h3 {
-    font-size: 1.5rem; /* 24px */
-    color: #333;
+    color: #015413;
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
 /* Paragraph styles */
 #page2 p {
     font-size: 1rem; /* 16px */
-    color: #666;
-    line-height: 1.6;
+    color: #466347; /* Paragraph text color */
+    font-size: 16px;
 }
 
 /* Specific styling for the first item */
@@ -436,7 +451,8 @@ nav ul li a:hover, nav ul li a.active
     background-color: #42b4ab;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+    line-height: 35px;
+    font-weight: 500;
 }
 
 .behaviour-ecology div
@@ -448,16 +464,16 @@ nav ul li a:hover, nav ul li a.active
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.behaviour-ecology div h2 , .behaviour-ecology div h3
+.behaviour-ecology div h3
 {
-    color: #333;
+    color: #015413;
     font-size: 24px;
     margin-bottom: 10px;
 }
 
 .behaviour-ecology div p
 {
-    color: #666; /* Paragraph text color */
+    color: #466347; /* Paragraph text color */
     font-size: 16px;
 }
 
@@ -470,6 +486,8 @@ nav ul li a:hover, nav ul li a.active
 {
     grid-column:  1 / 3;
 }
+
+
 
 /* foot */
 
@@ -488,8 +506,8 @@ footer
 }
 
 .footer-logo img {
-    max-width: 100px;
     border-radius: 50%;
+    max-width: 100px; /* Adjust logo size as needed */
 }
 
 .footer-info,
@@ -499,8 +517,7 @@ footer
 }
 
 .footer-info h3,
-.footer-social h3 
-{
+.footer-social h3 {
     margin-bottom: 10px;
 }
 
