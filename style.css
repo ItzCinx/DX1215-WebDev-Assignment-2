@@ -36,14 +36,13 @@ header
     pointer-events: none;
 }
 
-.parallax 
-{
+.parallax {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
+    overflow: visible; /* Change from hidden to visible */
 }
 
 .parallax img 
@@ -58,16 +57,18 @@ header
     opacity: 0;
     transition: opacity 1s ease, transform 1s ease;
     transform: translateY(50px); /* Adjust initial offset as needed */
+    z-index:-1;
 }
 
-#panda {
-    position: absolute;
-    overflow: visible;
+#panda 
+{
+    overflow:visible;
     top: 30%;
-    left: -5vw;
-    transition: all 0.5s ease;
-}
+    left: 0%;
 
+    width: 80vw;
+    height: 80vh;
+}
 
 #plant
 {
