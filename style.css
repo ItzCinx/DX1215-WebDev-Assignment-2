@@ -79,9 +79,8 @@ header
 #panda 
 {
     position: relative;
-    overflow: visible;
     width: 100vw;
-    height: 150vh;
+    height: 110vh;
 }
 
 #plant
