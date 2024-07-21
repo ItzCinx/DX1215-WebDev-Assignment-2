@@ -79,6 +79,7 @@ header
 #panda 
 {
     position: relative;
+    overflow: visible;
     width: 100vw;
     height: 120vh;
 }
