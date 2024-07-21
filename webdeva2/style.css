@@ -599,6 +599,12 @@ footer
         display:none;
     }
 
+    #panda
+    {
+        width: 100vw;
+        height:100vh;
+    }
+
     /*hide the menu item list*/
 
     nav ul li a:hover, nav ul li a.active 
