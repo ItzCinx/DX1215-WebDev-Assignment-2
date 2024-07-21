@@ -76,15 +76,9 @@ header
     transform: translateY(50px); /* Adjust initial offset as needed */
 }
 
-#panda 
-{
+#panda {
     position: absolute;
     overflow: visible;
-    object-fit: none;
-
-    left: -10%;
-    width: 100vw;
-    height: 110vh;
 }
 
 #plant
@@ -607,11 +601,6 @@ footer
     nav ul li a:hover, nav ul li a.active 
     {
         height: auto;
-    }
-
-    #panda
-    {
-        left:-35%;
     }
 
     #text 
