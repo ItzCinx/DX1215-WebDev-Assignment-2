@@ -389,6 +389,10 @@ nav ul li a:hover, nav ul li a.active
     max-width: 60vh;
 }
 
+.no-border {
+    border: none;
+}
+
 /* Page 2*/
 
 #page2btn , #page2

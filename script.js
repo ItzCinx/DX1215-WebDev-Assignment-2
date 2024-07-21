@@ -6,21 +6,20 @@ let hill5 = document.getElementById('hill5');
 
 const links = document.querySelectorAll("nav ul li a");
 
-links.forEach(link => 
-{
-    link.addEventListener("click", function() 
-    {
+links.forEach(function(link) {
+    link.addEventListener("click", function() {
         // Remove active class from all links
-        links.forEach(link => link.classList.remove("active"));
+        links.forEach(function(link) {
+            link.classList.remove("active");
+        });
         
         // Add active class to the clicked link
         this.classList.add("active");
     });
 });
 
-document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function(event) 
-    {
+document.querySelectorAll('nav ul li a').forEach(function(anchor) {
+    anchor.addEventListener('click', function(event) {
         event.preventDefault(); // Prevent the default anchor behavior
     });
 });
@@ -31,12 +30,12 @@ document.getElementById('hamIcon').addEventListener('click', function(event) {
 
 document.addEventListener('DOMContentLoaded', function() {
     const elements = document.querySelectorAll('.parallax img, .parallax h2');
-    const delays = [0, 300, 600, 900, 1200, 1500, 1800, 2100, 2400 , 2700]; 
+    const delays = [0, 300, 600, 900, 1200, 1500, 1800, 2100, 2400, 2700]; 
 
-    elements.forEach((element, index) => {
+    elements.forEach(function(element, index) {
         const delay = delays[index]; // Get delay from the array
 
-        setTimeout(() => {
+        setTimeout(function() {
             element.style.opacity = '1';
             element.style.transform = 'translateY(0)';
         }, delay);
@@ -44,63 +43,62 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function movePandaDown() {
-  const panda = document.getElementById('panda');
-  const currentTop = parseInt(window.getComputedStyle(panda).top);
-  panda.style.top = `${currentTop + 130}px`;
+    const panda = document.getElementById('panda');
+    const currentTop = parseInt(window.getComputedStyle(panda).top, 10);
+    panda.style.top = (currentTop + 130) + 'px';
 }
 
 // Call the function to move the panda down
 movePandaDown();
 
-window.addEventListener('scroll', ()=> {
+window.addEventListener('scroll', function() {
     let value = window.scrollY;
 
-    text.style.marginTop = value * 2 + 'px';
-    leaf.style.top = value * -1.5 + 'px';
-    hill5.style.left = value * 1.5 + 'px';
-    hill4.style.left = value * -1.5 + 'px';
-    hill1.style.top = value * 1.5 + 'px';
-})
+    text.style.marginTop = (value * 2) + 'px';
+    leaf.style.top = (value * -1.5) + 'px';
+    hill5.style.left = (value * 1.5) + 'px';
+    hill4.style.left = (value * -1.5) + 'px';
+    hill1.style.top = (value * 1.5) + 'px';
+});
 
+// Target all elements to save to constants
+const page1btn = document.querySelector("#page1btn");
+const page2btn = document.querySelector("#page2btn");
+const page3btn = document.querySelector("#page3btn");
+const allpages = document.querySelectorAll(".page");
 
-//target all elements to save to constants
-const page1btn=document.querySelector("#page1btn");
-const page2btn=document.querySelector("#page2btn");
-const page3btn=document.querySelector("#page3btn");
-var allpages=document.querySelectorAll(".page");
-
-//select all subtopic pages
+// Select all subtopic pages
 console.log(allpages);
 hideall();
 show(1); 
 
-function hideall()
-{ //function to hide all pages
-    for(let onepage of allpages)
-    { //go through all subtopic pages
-        onepage.style.display="none"; //hide it
-    }
+function hideall() {
+    // Function to hide all pages
+    allpages.forEach(function(onepage) {
+        // Go through all subtopic pages
+        onepage.style.display = "none"; // Hide it
+    });
 }
 
-function show(pgno)
-{ //function to show selected page no
+function show(pgno) {
+    // Function to show selected page no
     hideall();
-    //select the page based on the parameter passed in
-    let onepage=document.querySelector("#page"+pgno);
-    //show the page
-    onepage.style.display="block";
+    // Select the page based on the parameter passed in
+    let onepage = document.querySelector("#page" + pgno);
+    // Show the page
+    onepage.style.display = "block";
 }
 
-/*Listen for clicks on the buttons, assign anonymous
-eventhandler functions to call show function*/
-page1btn.addEventListener("click", function () { 
-show(1); 
+// Listen for clicks on the buttons, assign anonymous
+// event handler functions to call show function
+page1btn.addEventListener("click", function() { 
+    show(1); 
 });
-page2btn.addEventListener("click", function () { 
-show(2); 
+page2btn.addEventListener("click", function() { 
+    show(2); 
 });
-page3btn.addEventListener("click", function () {
-show(3); 
+page3btn.addEventListener("click", function() {
+    show(3); 
 });
 
 const hamBtn = document.querySelector("#hamIcon");
@@ -130,6 +128,7 @@ function checkViewportWidth() {
         menuItemsList.classList.add("menuHide"); // Show menu on narrower screens if currently visible
     }
 }
+
 // Initial check on page load
 checkViewportWidth();
 
@@ -144,10 +143,10 @@ function showSlide(index) {
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
 
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        slide.style.order = (i - index + totalSlides) % totalSlides;
-    });
+slides.forEach(function(slide, i) {
+    slide.classList.remove('active');
+    slide.style.order = (i - index + totalSlides) % totalSlides;
+});
 
     const middleIndex = (index + Math.floor(totalSlides / 2)) % totalSlides;
     slides[middleIndex].classList.add('active');
@@ -173,42 +172,45 @@ function nextSlide() {
 // Initialize the first slide
 showSlide(currentSlide);
 
- // Check if the browser supports the Fullscreen API
- if (document.documentElement.requestFullscreen) {
+const prevButton = document.querySelector("#prevButton");
+const nextButton = document.querySelector("#nextButton");
+
+prevButton.addEventListener("click", prevSlide);
+nextButton.addEventListener("click", nextSlide);
+
+if (document.documentElement.requestFullscreen) {
     // Function to enter fullscreen mode
-    function enterFullscreen() {
-      if (document.documentElement.requestFullscreen) {
+const enterFullscreen = function() {
+    if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
-      } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+    } else if (document.documentElement.mozRequestFullScreen) { // Firefox
         document.documentElement.mozRequestFullScreen();
-      } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+    } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, and Opera
         document.documentElement.webkitRequestFullscreen();
-      } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+    } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
         document.documentElement.msRequestFullscreen();
-      }
     }
+};
 
-    // Function to exit fullscreen mode
-    function exitFullscreen() {
-      if (document.exitFullscreen) {
+// Function to exit fullscreen mode
+const exitFullscreen = function() {
+    if (document.exitFullscreen) {
         document.exitFullscreen();
-      } else if (document.mozCancelFullScreen) { // Firefox
+    } else if (document.mozCancelFullScreen) { // Firefox
         document.mozCancelFullScreen();
-      } else if (document.webkitExitFullscreen) { // Chrome, Safari, and Opera
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari, and Opera
         document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) { // IE/Edge
+    } else if (document.msExitFullscreen) { // IE/Edge
         document.msExitFullscreen();
-      }
     }
+};
 
-    // Add event listeners to enter/exit fullscreen on button click
-    var fullscreenButton = document.getElementById('fullscreen-button');
-
-    fullscreenButton.addEventListener('click', function() {
-      if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+// Add event listeners and other logic here
+document.getElementById('fullscreen-button').addEventListener('click', function() {
+    if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
         exitFullscreen();
-      } else {
+    } else {
         enterFullscreen();
-      }
-    });
-  }
+    }
+});
+}
