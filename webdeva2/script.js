@@ -43,6 +43,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function movePandaDown() {
+  const panda = document.getElementById('panda');
+  const currentTop = parseInt(window.getComputedStyle(panda).top);
+  panda.style.top = `${currentTop + 150}px`;
+}
+
+// Call the function to move the panda down
+movePandaDown();
+
 window.addEventListener('scroll', ()=> {
     let value = window.scrollY;
 

@@ -76,6 +76,13 @@ header
     transform: translateY(50px); /* Adjust initial offset as needed */
 }
 
+#panda 
+{
+    position: relative;
+    width: 100vw;
+    height: 105vh;
+}
+
 #plant
 {
     z-index: 1;
