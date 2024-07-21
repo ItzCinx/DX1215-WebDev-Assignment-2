@@ -78,9 +78,13 @@ header
 
 #panda 
 {
+    position: absolute;
+    overflow: visible;
+    object-fit: none;
+
+    left: -10%;
     width: 100vw;
     height: 110vh;
-    top: 5%;
 }
 
 #plant
@@ -603,6 +607,11 @@ footer
     nav ul li a:hover, nav ul li a.active 
     {
         height: auto;
+    }
+
+    #panda
+    {
+        left:-35%;
     }
 
     #text 
