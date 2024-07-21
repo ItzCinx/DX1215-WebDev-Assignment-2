@@ -606,6 +606,14 @@ footer
         height: auto;
     }
 
+    #panda 
+    {
+       position: absolute;
+       overflow:visible;
+       top: 15%;
+      left: -10%;
+    }
+
     #text 
     {
         left: 3vh;
