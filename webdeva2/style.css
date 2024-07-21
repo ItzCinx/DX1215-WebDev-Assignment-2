@@ -76,14 +76,6 @@ header
     transform: translateY(50px); /* Adjust initial offset as needed */
 }
 
-#panda 
-{
-    position: absolute;
-    overflow:visible;
-    top: 15%;
-    left: -10%;
-}
-
 #plant
 {
     z-index: 1;
@@ -604,14 +596,6 @@ footer
     nav ul li a:hover, nav ul li a.active 
     {
         height: auto;
-    }
-
-    #panda 
-    {
-       position: absolute;
-       overflow:visible;
-       top: 15%;
-      left: -10%;
     }
 
     #text 
