@@ -65,6 +65,7 @@ window.addEventListener('scroll', function() {
 const page1btn = document.querySelector("#page1btn");
 const page2btn = document.querySelector("#page2btn");
 const page3btn = document.querySelector("#page3btn");
+const page4btn = document.querySelector("#page4btn");
 const allpages = document.querySelectorAll(".page");
 
 // Select all subtopic pages
@@ -99,6 +100,9 @@ page2btn.addEventListener("click", function() {
 });
 page3btn.addEventListener("click", function() {
     show(3); 
+});
+page4btn.addEventListener("click", function() {
+    show(4); 
 });
 
 const hamBtn = document.querySelector("#hamIcon");
