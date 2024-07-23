@@ -20,7 +20,7 @@ links.forEach(function(link) {
 
 document.querySelectorAll('nav ul li a').forEach(function(anchor) {
     anchor.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default anchor behavior
+        event.preventDefault();
     });
 });
 
@@ -139,6 +139,102 @@ checkViewportWidth();
 // Listen for resize events to adjust menu visibility dynamically
 window.addEventListener("resize", function() {
     checkViewportWidth();
+});
+
+document.querySelectorAll('.question').forEach(question => {
+    const answers = question.querySelectorAll('.answer');
+
+    answers.forEach(answer => {
+        answer.addEventListener('click', function () {
+            // Unselect all other answers in the same question
+            answers.forEach(ans => ans.classList.remove('selected'));
+
+            // Select the current answer
+            this.classList.add('selected');
+            
+            const radio = this.querySelector('input[type="radio"]');
+            if (radio) {
+                radio.checked = true;
+            }
+        });
+    });
+});
+
+document.getElementById('checkAnswers').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    const questions = document.querySelectorAll('.question');
+    const submitButton = document.getElementById('checkAnswers');
+    const retryButton = document.getElementById('retryBtn');
+    let correctAnswers = 0;
+
+    // Calculate the number of correct answers
+    questions.forEach((question, index) => {
+        const correctAnswer = question.getAttribute('data-correct');
+        const selectedOption = question.querySelector('input[type="radio"]:checked');
+
+        if (selectedOption && selectedOption.value === correctAnswer) {
+            correctAnswers++;
+        }
+    });
+
+    // Update the results
+    const totalQuestions = questions.length;
+    const resultsDiv = document.getElementById('results');
+
+    // Clear previous results and add new ones
+    resultsDiv.innerHTML = ''; // Clear previous content
+
+    // Add Title
+    const resultTitle = document.createElement('h2');
+    resultTitle.textContent = `Result`;
+    resultsDiv.appendChild(resultTitle);
+
+    // Add result message
+    const resultMessage = document.createElement('p');
+    resultMessage.textContent = `You got ${correctAnswers} out of ${totalQuestions} correct.`;
+    resultsDiv.appendChild(resultMessage);
+
+    // Add additional paragraph
+    const additionalMessage = document.createElement('p');
+    additionalMessage.textContent = 'Thank you for participating in the quiz!';
+    resultsDiv.appendChild(additionalMessage);
+
+    // Hide all questions and the submit button
+    questions.forEach(question => {
+        question.style.display = 'none';
+    });
+    submitButton.style.display = 'none';
+
+    // Show results div and the retry button
+    resultsDiv.style.display = 'block';
+    retryButton.style.display = 'inline-block';
+});
+document.getElementById('retryBtn').addEventListener('click', function (event) 
+{
+    event.preventDefault(); // Prevent default link behavior
+
+    // Clear all selections
+    document.querySelectorAll('.answer').forEach(answer => {
+        answer.classList.remove('selected');
+    });
+
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+        radio.checked = false;
+    });
+
+    // Show all questions and the submit button
+    document.querySelectorAll('.question').forEach(question => {
+        question.style.display = 'block';
+    });
+    document.getElementById('checkAnswers').style.display = 'inline-block';
+
+    // Clear results
+    const resultsDiv = document.getElementById('results');
+    const retryButton = document.getElementById('retryBtn');
+    resultsDiv.innerHTML = '';
+    resultsDiv.style.display = 'none';
+    retryButton.style.display = 'none';
 });
 
 let currentSlide = 1;

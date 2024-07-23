@@ -114,7 +114,6 @@ nav ul
     list-style-type: none;
     margin-left: 5vh;
     align-items: flex-end;
-    
 }
 
 nav ul li a 
@@ -169,6 +168,7 @@ nav ul li a:hover, nav ul li a.active
 {
     display:block;
 }
+
 /* page */
 
 #pagecontainer
@@ -180,6 +180,7 @@ nav ul li a:hover, nav ul li a.active
 {
     position: relative;
     border-radius: 2vh;
+    min-width: 40vh;
 }
 
 /* page 1 */
@@ -216,7 +217,6 @@ nav ul li a:hover, nav ul li a.active
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
     margin-bottom: 3vh;
     row-gap: 3vh;
     border-radius: 8px;
@@ -231,7 +231,6 @@ nav ul li a:hover, nav ul li a.active
  
 .about div
 {
-    min-width: 55vh;
     flex: 1;
     color: rgb(144, 198, 144);
 
@@ -249,7 +248,6 @@ nav ul li a:hover, nav ul li a.active
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    min-width: 30vh;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -423,10 +421,9 @@ nav ul li a:hover, nav ul li a.active
 }
 
 /* Heading styles */
-#page2 h2,#page2 h3 {
+#page2 h2,#page2 h3 
+{
     color: #015413;
-    font-size: 24px;
-    margin-bottom: 10px;
 }
 
 /* Paragraph styles */
@@ -512,6 +509,91 @@ nav ul li a:hover, nav ul li a.active
     padding: 5vh;
 }
 
+.quiz
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+
+    background-color: #0c6860;
+    height:auto;
+    border-radius: 8px;
+    padding: 20px;
+    gap:20px;
+}
+
+.question
+{
+    background-color:#42b4ab;
+    border-radius: 8px;
+    padding: 20px;
+    width:100%;
+    color: #181b18;
+}
+
+.button 
+{
+    display: inline-flex; /* Use inline-flex to shrink-wrap the content */
+    background-color:#31a097;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.answer {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px; 
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+.answer:hover
+{
+    background-color:#31a097;
+}
+
+#retryBtn
+{
+    display: inline-flex;
+    background-color:#31a097;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+
+    font-weight: 500;
+}
+
+#results
+{
+    display: inline-flex; 
+
+    background-color: #8ce5de;
+    color: #313f32;
+
+    padding:20px;
+    border-radius: 5px;
+
+    text-align: center;
+    text-decoration: none;
+
+    width:100%;
+
+    line-height: 35px;
+    font-weight: 500;
+}
+
+#retryBtn , #results
+{
+    display: none;
+}
+
 /* foot */
 
 footer 
@@ -555,7 +637,6 @@ footer
 
 .footer-social ul li {
     display: inline;
-    margin-right: 10px;
 }
 
 .footer-social ul li a {
@@ -566,10 +647,6 @@ footer
 .footer-bottom {
     margin-top: 20px;
     text-align: center;
-}
-
-.footer-bottom p {
-    margin: 0;
 }
 
 /* Media query for smaller screens */
@@ -630,7 +707,6 @@ footer
     {
         flex-direction: column;
         align-items: center;
-        min-width: 30vh;
     }
     
     .about img 

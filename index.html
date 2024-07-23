@@ -46,7 +46,7 @@
             <li><a class="active" href='#' id="page1btn">About</a></li>
             <li><a href='#' id="page2btn">Taxonomy</a></li>
             <li><a href='#' id="page3btn">Behaviour and Ecology</a></li>
-            <li><a href='#' id="page4btn">Form</a></li>
+            <li><a href='#' id="page4btn">Quiz</a></li>
         </ul>
 
     </nav>
@@ -232,9 +232,57 @@
         </div>
         
         <div class="page" id="page4">
-            <section>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis hic soluta blanditiis, consequatur esse veniam repudiandae maiores sed enim obcaecati quo aspernatur ipsam optio molestiae odit, aliquam dolorum dolore? Itaque dolor atque magnam sunt beatae quae quisquam a esse eum quam. Dolorem consequatur provident commodi quaerat, temporibus voluptatum aperiam optio necessitatibus repellendus magnam, tempore consequuntur aliquam maxime nostrum unde ipsum fugiat reprehenderit eum incidunt eligendi, sed tempora. Porro beatae nisi, tempore consequatur vitae eligendi dolorum quo sapiente sunt et omnis, voluptatum optio quam autem? Ducimus sed rerum dolor quis assumenda, tenetur magnam perferendis. Laboriosam temporibus provident odit fugiat magnam officiis.</p>
+
+            <section class="quiz">
+
+                <div class="question" data-correct="C">
+                    <h3>1. What family do red pandas belong to?</h3>
+                    <div class="answer"><input type="radio" name="q1" value="A"> A) Ursidae</div>
+                    <div class="answer"><input type="radio" name="q1" value="B"> B) Canidae</div>
+                    <div class="answer"><input type="radio" name="q1" value="C"> C) Ailuridae</div>
+                    <div class="answer"><input type="radio" name="q1" value="D"> D) Felidae</div>
+                </div>
+
+                <div class="question" data-correct="A">
+                    <h3>2. What is the primary component of a red panda's diet?</h3>
+                    <div class="answer"><input type="radio" name="q2" value="A"> A) Bamboo</div>
+                    <div class="answer"><input type="radio" name="q2" value="B"> B) Fish</div>
+                    <div class="answer"><input type="radio" name="q2" value="C"> C) Insects</div>
+                    <div class="answer"><input type="radio" name="q2" value="D"> D) Fruits</div>
+                </div>
+
+                <div class="question" data-correct="C">
+                    <h3>3. Where are red pandas naturally found?</h3>
+                    <div class="answer"><input type="radio" name="q3" value="A"> A) Australia</div>
+                    <div class="answer"><input type="radio" name="q3" value="B"> B) Amazon Rainforest</div>
+                    <div class="answer"><input type="radio" name="q3" value="C"> C) Eastern Himalayas</div>
+                    <div class="answer"><input type="radio" name="q3" value="D"> D) Sahara Desert</div>
+                </div>
+
+                <div class="question" data-correct="B">
+                    <h3>4. How do red pandas use their tails?</h3>
+                    <div class="answer"><input type="radio" name="q4" value="A"> A) For flying</div>
+                    <div class="answer"><input type="radio" name="q4" value="B"> B) As blankets for warmth</div>
+                    <div class="answer"><input type="radio" name="q4" value="C"> C) For swimming</div>
+                    <div class="answer"><input type="radio" name="q4" value="D"> D) As weapons</div>
+                </div>
+
+                <div class="question" data-correct="A">
+                    <h3>5. When are red pandas most active?</h3>
+                    <div class="answer"><input type="radio" name="q5" value="A"> A) During dawn and dusk</div>
+                    <div class="answer"><input type="radio" name="q5" value="B"> B) At night</div>
+                    <div class="answer"><input type="radio" name="q5" value="C"> C) During the day</div>
+                    <div class="answer"><input type="radio" name="q5" value="D"> D) All day long</div>
+                </div>
+
+                <a href='#' class="button" id="checkAnswers">Submit Answers</a>
+                
+                <div id="results"></div>
+
+                <a href='#' class="retry" id="retryBtn">Retry</a>
+
             </section>
+
         </div>
 
     </div>
