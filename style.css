@@ -541,7 +541,7 @@ nav ul li a:hover, nav ul li a.active
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .answer {
@@ -574,8 +574,8 @@ nav ul li a:hover, nav ul li a.active
 {
     display: inline-flex; 
 
-    background-color: #8ce5de;
-    color: #313f32;
+    background-color: #74d3cb;
+    color: #262e26;
 
     padding:20px;
     border-radius: 5px;
