@@ -141,18 +141,18 @@ window.addEventListener("resize", function() {
     checkViewportWidth();
 });
 
-document.querySelectorAll('.question').forEach(question => {
-    const answers = question.querySelectorAll('.answer');
+document.querySelectorAll('.question').forEach(function(question) {
+    var answers = question.querySelectorAll('.answer');
 
-    answers.forEach(answer => {
+    answers.forEach(function(answer) {
         answer.addEventListener('click', function () {
             // Unselect all other answers in the same question
-            answers.forEach(ans => ans.classList.remove('selected'));
+            answers.forEach(function(ans) { ans.classList.remove('selected'); });
 
             // Select the current answer
             this.classList.add('selected');
             
-            const radio = this.querySelector('input[type="radio"]');
+            var radio = this.querySelector('input[type="radio"]');
             if (radio) {
                 radio.checked = true;
             }
@@ -160,18 +160,18 @@ document.querySelectorAll('.question').forEach(question => {
     });
 });
 
-document.getElementById('checkAnswers').addEventListener('click', function (event) {
+document.getElementById('checkAnswers').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent default link behavior
 
-    const questions = document.querySelectorAll('.question');
-    const submitButton = document.getElementById('checkAnswers');
-    const retryButton = document.getElementById('retryBtn');
-    let correctAnswers = 0;
+    var questions = document.querySelectorAll('.question');
+    var submitButton = document.getElementById('checkAnswers');
+    var retryButton = document.getElementById('retryBtn');
+    var correctAnswers = 0;
 
     // Calculate the number of correct answers
-    questions.forEach((question, index) => {
-        const correctAnswer = question.getAttribute('data-correct');
-        const selectedOption = question.querySelector('input[type="radio"]:checked');
+    questions.forEach(function(question) {
+        var correctAnswer = question.getAttribute('data-correct');
+        var selectedOption = question.querySelector('input[type="radio"]:checked');
 
         if (selectedOption && selectedOption.value === correctAnswer) {
             correctAnswers++;
@@ -179,29 +179,29 @@ document.getElementById('checkAnswers').addEventListener('click', function (even
     });
 
     // Update the results
-    const totalQuestions = questions.length;
-    const resultsDiv = document.getElementById('results');
+    var totalQuestions = questions.length;
+    var resultsDiv = document.getElementById('results');
 
     // Clear previous results and add new ones
     resultsDiv.innerHTML = ''; // Clear previous content
 
     // Add Title
-    const resultTitle = document.createElement('h2');
-    resultTitle.textContent = `Result`;
+    var resultTitle = document.createElement('h2');
+    resultTitle.textContent = 'Result';
     resultsDiv.appendChild(resultTitle);
 
     // Add result message
-    const resultMessage = document.createElement('p');
-    resultMessage.textContent = `You got ${correctAnswers} out of ${totalQuestions} correct.`;
+    var resultMessage = document.createElement('p');
+    resultMessage.textContent = 'You got ' + correctAnswers + ' out of ' + totalQuestions + ' correct.';
     resultsDiv.appendChild(resultMessage);
 
     // Add additional paragraph
-    const additionalMessage = document.createElement('p');
+    var additionalMessage = document.createElement('p');
     additionalMessage.textContent = 'Thank you for participating in the quiz!';
     resultsDiv.appendChild(additionalMessage);
 
     // Hide all questions and the submit button
-    questions.forEach(question => {
+    questions.forEach(function(question) {
         question.style.display = 'none';
     });
     submitButton.style.display = 'none';
@@ -210,28 +210,28 @@ document.getElementById('checkAnswers').addEventListener('click', function (even
     resultsDiv.style.display = 'block';
     retryButton.style.display = 'inline-block';
 });
-document.getElementById('retryBtn').addEventListener('click', function (event) 
-{
+
+document.getElementById('retryBtn').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent default link behavior
 
     // Clear all selections
-    document.querySelectorAll('.answer').forEach(answer => {
+    document.querySelectorAll('.answer').forEach(function(answer) {
         answer.classList.remove('selected');
     });
 
-    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+    document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
         radio.checked = false;
     });
 
     // Show all questions and the submit button
-    document.querySelectorAll('.question').forEach(question => {
+    document.querySelectorAll('.question').forEach(function(question) {
         question.style.display = 'block';
     });
     document.getElementById('checkAnswers').style.display = 'inline-block';
 
     // Clear results
-    const resultsDiv = document.getElementById('results');
-    const retryButton = document.getElementById('retryBtn');
+    var resultsDiv = document.getElementById('results');
+    var retryButton = document.getElementById('retryBtn');
     resultsDiv.innerHTML = '';
     resultsDiv.style.display = 'none';
     retryButton.style.display = 'none';
